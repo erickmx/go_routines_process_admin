@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"time"
 )
 
 func main() {
@@ -75,6 +76,7 @@ func DisplayProcecesConcurrently(processAdmin *ProcessAdmin, done chan bool) {
 			return
 		default:
 			processAdmin.ShowProcecess()
+			time.Sleep(time.Millisecond * 500)
 		}
 	}
 }
